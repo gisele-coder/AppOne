@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">QuizExample</string>
+
+    <!-- Company Infos -->
+    <string name="app_name">AppOne</string>
+    <string name="company_name">CompanyOne</string>
+    <string name="company_slogan">We are here to help you.</string>
+    <string name="company_address">1234, StreetOne, CityOne, CountryOne</string>
+    <string name="company_phone">+1234567890</string>
+    <string name="company_email">contact@appone.com</string>
+    <string name="company_website">www.appone.com</string>
+
+    <!-- App Infos -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -7,6 +17,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Menu Items -->
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

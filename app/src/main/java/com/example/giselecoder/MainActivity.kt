@@ -2,6 +2,7 @@ package com.example.giselecoder
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private var isDarkTheme = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +30,9 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+
         binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "log_fab_click", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Fab button", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
 
             Firebase.analytics.logEvent("log_fab_click", null)
@@ -59,5 +62,20 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    // Método chamado quando o botão é clicado
+    fun changeTheme(view: View) {
+        if (isDarkTheme) {
+            // Alterne para o tema claro
+            setTheme(R.style.AppTheme_Light)
+        } else {
+            // Alterne para o tema escuro
+            setTheme(R.style.AppTheme_Dark)
+        }
+        // Recrie a atividade para aplicar o novo tema
+        recreate()
+        // Inverta o estado do tema
+        isDarkTheme = !isDarkTheme
     }
 }

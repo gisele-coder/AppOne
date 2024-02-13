@@ -1,6 +1,7 @@
 package com.example.giselecoder
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -30,11 +31,16 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        val posts = PostUtils.getPostsFromStrings(this)
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Fab button", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
-
+            for (post in posts) {
+                Log.d("Post", "Título: ${post.title}")
+                Log.d("Post", "Descrição: ${post.description}")
+                Log.d("Post", "URL do vídeo: ${post.videoUrl}")
+            }
             Firebase.analytics.logEvent("log_fab_click", null)
 
         }

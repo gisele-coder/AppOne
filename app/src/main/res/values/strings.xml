@@ -21,4 +21,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Exemplo de array de strings posts -->
+    <string-array name="posts">
+        <item>Post 1;Teste de post 1 com descrição.;https://www.youtube.com/watch?v=k3WkJq478To</item>
+        <item>Post 2;Teste de post 2 com descrição.;https://www.youtube.com/watch?v=Fr-CuY0H38A</item>
+        <item>Post 3;Teste de post 3 com descrição.;https://www.youtube.com/watch?v=wbqVXwi3fMQ</item>
+    </string-array>
+
+
 </resources>
